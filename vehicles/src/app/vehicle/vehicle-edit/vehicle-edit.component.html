@@ -1,7 +1,7 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
   <label for="vin">VIN: </label>
-  <input type="text" id="vin" name="vin" class="form-control" [disabled]="editMode" ngModel required>
+  <input type="text" id="vin" name="vin" class="form-control" [readonly]="editMode" ngModel required>
   <br>
 
   <label for="type">Type: </label>

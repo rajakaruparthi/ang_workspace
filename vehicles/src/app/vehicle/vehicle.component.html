@@ -22,7 +22,7 @@
         <tr *ngFor="let vehicle of vehicles; let i = index">
           <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
           <td>
-            <a (click)="onEdit(i)" data-toggle="modal" data-target="#myModal" routerLinkActive="active">{{vehicle.vin}}</a>
+            <a (click)="onEdit(i)" data-toggle="modal" data-target="#myModal">{{vehicle.vin}}</a>
           </td>
           <td>{{vehicle.type}}</td>
           <td>{{vehicle.brand}}</td>

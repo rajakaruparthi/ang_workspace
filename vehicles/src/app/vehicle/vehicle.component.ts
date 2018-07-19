@@ -33,8 +33,8 @@ export class VehicleComponent implements OnInit {
   }
 
   onEdit(index: number){
-    this.vehicleService.startEditing.next(index);
     this.router.navigate(["vehicles/"+index]);
+    this.vehicleService.startEditing.next(index);
   }
 
 

@@ -33,7 +33,7 @@ public class VehicleServiceImpl implements VehicleService{
 	@Override
 	public Response addVehicle(Vehicle vehicle) {
 		if(checkVin(vehicle.getVin())) {
-			System.out.println();
+			System.out.println("came into post");
 		}
 		Vehicle newVehicle = repository.save(vehicle);
 		return Response.ok(newVehicle).build();

@@ -10,9 +10,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import com.raja.restws.models.Vehicle;
 
-
+@CrossOrigin
 @Consumes("application/json")
 @Produces("application/json")
 @Path("/vehicleservice")

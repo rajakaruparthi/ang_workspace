@@ -10,7 +10,7 @@ export class VehicleService implements OnInit{
 
   startEditing = new Subject<number>();
   vehiclesChanged = new Subject<Vehicle[]>();
-
+  updatedFlag = false; addedFlag  = false;
   private vehicles : Vehicle[] = [];
 
 
@@ -45,15 +45,31 @@ export class VehicleService implements OnInit{
     return this.vehicles;
   }
 
-  updateVehicles(index:number, newVehicle: Vehicle){
-    
+  updateVehicles(index:number, newVehicle: Vehicle): boolean{
     this.vehicles[index] = newVehicle;
     this.vehiclesChanged.next(this.vehicles.slice());
+    this.http.put("http://localhost:8080/vehicles/services/vehicleservice/vehicles", newVehicle)
+      .subscribe(
+        (response) => {
+          if(response.ok){
+            this.updatedFlag = true;
+          }
+        }
+      );
+    return this.updatedFlag;
   }
 
-  addVehicle(newVehicle: Vehicle){
+  addVehicle(newVehicle: Vehicle) : boolean{
     this.vehicles.push(newVehicle);
     this.vehiclesChanged.next(this.vehicles.slice());
-  }
-  
+    this.http.post("http://localhost:8080/vehicles/services/vehicleservice/vehicles", newVehicle)
+      .subscribe(
+        (response) => {
+          if(response.ok){
+            this.addedFlag = true;
+          }
+        }
+      );
+    return this.addedFlag;
+  } 
 }
