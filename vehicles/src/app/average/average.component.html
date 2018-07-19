@@ -1,0 +1,31 @@
+<div class="container">
+  <form (ngSubmit)=onSubmit(f) #f="ngForm">
+  <div class="row">   
+    <div class="col-sm-2">
+       
+            <label for="averageBy" >Average By: </label>
+            <select id="averageBy" name="averageBy" class="form-control" ngModel required >
+              <option *ngFor="let each_option of select_options" (value)="each_option" class="form-control">{{each_option}} </option>
+            </select> <br>
+            <button class="btn btn-primary">Submit</button>         
+   </div>
+  </div>
+  <hr>
+   <div class="row" *ngIf="submitted">
+     <div class="col-xs-8">
+       <h4>Average by {{averageBy}}:</h4> <br>
+        <table class="table table-bordered" >
+            <tr>
+                <th>Type</th>
+                <th>VIN</th>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Engine Type</th>
+                <th>Price</th>
+                <th>Year</th>
+            </tr>
+        </table>
+     </div> 
+   </div>
+  </form>
+</div>

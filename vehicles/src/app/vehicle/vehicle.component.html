@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <button class="btn btn-primary" (click)="addNewVehicle()">Add New
+      </button>
+      <br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-9">
+      <table class="table table-bordered">
+        <tr>
+          <th>VIN</th>
+          <th>Type</th>
+          <th>Brand</th>
+          <th>Color</th>
+          <th>Engine Type</th>
+          <th>Price</th>
+          <th>Year</th>
+        </tr>
+        <tr *ngFor="let vehicle of vehicles; let i = index">
+          <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+          <td>
+            <a (click)="onEdit(i)" data-toggle="modal" data-target="#myModal" routerLinkActive="active">{{vehicle.vin}}</a>
+          </td>
+          <td>{{vehicle.type}}</td>
+          <td>{{vehicle.brand}}</td>
+          <td>{{vehicle.color}}</td>
+          <td>{{vehicle.engine}}</td>
+          <td>{{vehicle.price}}</td>
+          <td>{{vehicle.year}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <h5 style="padding: 5px; background-color: yellow">Select the vehicle to edit</h5>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+
+</div>

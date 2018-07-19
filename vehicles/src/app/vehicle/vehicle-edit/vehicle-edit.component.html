@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <label for="vin">VIN: </label>
+  <input type="text" id="vin" name="vin" class="form-control" [disabled]="editMode" ngModel required>
+  <br>
+
+  <label for="type">Type: </label>
+  <input type="text" id="type" name="type" class="form-control" ngModel required>
+  <br>
+
+  <label for="brand">Brand: </label>
+  <input type="text" id="brand" name="brand" class="form-control" ngModel required>
+  <br>
+
+  <label for="color">color</label>
+  <input type="text" id="color" name="color" class="form-control" ngModel required>
+  <br>
+
+  <label for="engine">Engine Type: </label>
+  <input type="text" id="engine" name="engine" class="form-control" ngModel required>
+  <br>
+
+  <label for="price">Price: </label>
+  <input type="text" id="price" name="price" class="form-control" ngModel required>
+  <br>
+
+  <label for="year">Year: </label>
+  <input type="text" id="year" name="year" class="form-control" ngModel required>
+  <br>
+
+  <button class="btn btn-success" type="submit" [disabled]="!f.valid">Submit</button>
+  
+</form>
