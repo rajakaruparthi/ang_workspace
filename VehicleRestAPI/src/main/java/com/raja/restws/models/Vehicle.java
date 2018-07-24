@@ -6,9 +6,10 @@ import javax.persistence.Id;
 @Entity
 public class Vehicle {
 
+
+	private String type;
 	@Id
 	private int vin;
-	private String type;
 	private String brand;
 	private String color;
 	private String engine;
