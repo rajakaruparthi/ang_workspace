@@ -1,0 +1,21 @@
+
+  <h3>Assignment 1</h3>
+  <hr>
+  <div class="container">
+    <div class="row col-xs-12">
+      <label for="textArea">Please enter the comments</label> <br>
+      <textarea name="textArea" id="textArea" #textarea></textarea>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" (click)="onSubmit(textarea.value)">Submit</button>
+    </div>
+    <div class="row">
+      <label> Comments: </label>
+    </div>
+    <div class="row" *ngFor="let each of comments;">
+        {{each}}
+    </div>
+  </div>
+
+
+
